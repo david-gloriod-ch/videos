@@ -1,0 +1,30 @@
+<div id="container">
+	<button id="error">Erreur</button>
+	<button id="success">Succès</button>
+	<textarea id="output"></textarea>
+</div>
+
+<script>
+
+let output;
+
+setTimeout(() => {
+	output = document.getElementById('output');
+
+	document.getElementById('error')
+	.addEventListener('click', clickError);
+
+	document.getElementById('success')
+	.addEventListener('click', clickSuccess);
+}, 1);
+
+function clickError() {
+	output.value = prenom;
+}
+
+function clickSuccess() {
+	let prenom = 'Albert';
+	output.value = prenom;
+}
+
+</script>

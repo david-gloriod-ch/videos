@@ -1,0 +1,49 @@
+<div id="container">
+	<div id="content">
+		<div>
+			<h1 id="title"></h1>
+		</div>
+		<div id="picture">
+			<img src="" alt="">
+		</div>
+	</div>
+</div>
+
+<style>
+
+#container {
+	margin-left: 10px;
+	width: calc(1080px / 2.2);
+	height: calc(1920px / 2.2);
+	text-align: center;
+	position: fixed;
+	top: 10px;
+	left: 0;
+	right: 0;
+}
+
+#title {
+	font-size: 50px;
+	margin-top: 119px;
+	margin-bottom: 119px;
+}
+
+</style>
+
+<script src="./config/configuration.js"></script>
+
+<script>
+
+const title = document.getElementById('title');
+const picture = document.getElementById('picture');
+const content = document.getElementById('content');
+const container = document.getElementById('container');
+
+document.title = DOCUMENT_TITLE;
+title.innerText = HTML_TITLE;
+content.style.color = TEXT_COLOR;
+container.style.backgroundColor = BACKGROUND_COLOR;
+picture.querySelector('img').src = IMAGE_PATH;
+picture.querySelector('img').alt = IMAGE_PATH;
+
+</script>

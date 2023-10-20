@@ -1,0 +1,65 @@
+<div id="container">
+	<div id="content">
+		<div>
+			<h1 id="title"></h1>
+		</div>
+
+		<div id="main">
+			<p id="compteur"></p>
+			<button id="button">Click me</button>
+		</div>
+	</div>
+</div>
+
+<script src="./config/variables.js"></script>
+<script src="./scripts/variables.js"></script>
+<script>
+
+const title		= document.getElementById('title');
+const content	= document.getElementById('content');
+const container	= document.getElementById('container');
+
+document.title						= DOCUMENT_TITLE;
+title.innerText						= HTML_TITLE;
+content.style.color					= TEXT_COLOR;
+container.style.backgroundColor		= BACKGROUND_COLOR;
+
+</script>
+
+<script>
+let compteur = 0;
+
+const compteurElement =
+document.getElementById('compteur');
+
+const button =
+document.getElementById('button');
+
+button.addEventListener('click', () => {
+	compteur++;
+	compteurElement.innerText = compteur;
+});
+
+setTimeout(() => { compteurElement.innerText = compteur; }, 1);
+</script>
+
+<style>
+
+#container {
+	margin-left: 10px;
+	width: calc(1080px / 2.2);
+	height: calc(1920px / 2.2);
+	text-align: center;
+	position: fixed;
+	top: 10px;
+	left: 0;
+	right: 0;
+}
+
+#title {
+	font-size: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+</style>
