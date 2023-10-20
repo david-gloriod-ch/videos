@@ -1,0 +1,79 @@
+<div id="container">
+	<form>
+		<h3>Trouve le nombre</h3>
+		<div id="_votre-nombre">
+			<label for="votre-nombre">Votre nombre:</label>
+			<input type="number" id="votre-nombre">
+		</div>
+		<div id="_nombre-a-trouver">
+			<label for="nombre-a-trouver">Nombre à trouver:</label>
+			<input type="number" id="nombre-a-trouver">
+		</div>
+		<div id="_resultat">
+			<label for="resultat">Résultat:</label>
+			<input type="text" id="resultat" readonly>
+		</div>
+		<button type="button" id="verifier">Vérfier</button>
+	</form>
+</div>
+
+<style scoped>
+
+#container {
+	width: 500px;
+	text-align: center;
+	margin-top: 200px;
+}
+
+.cellule input {
+	width: 150px;
+}
+
+form {
+	margin: auto;
+	border: 1px solid black;
+	width: 350px;
+	padding-bottom: 30px;
+}
+
+#_votre-nombre, #_nombre-a-trouver, #_resultat, #verifier {
+	margin-top: 10px;
+}
+
+label {
+	display: inline-block;
+	width: 200px;
+}
+
+</style>
+
+<script>
+
+const votreNombreElement = document.querySelector('#votre-nombre');
+const nombreATrouverElement = document.querySelector('#nombre-a-trouver');
+const resultatElement = document.querySelector('#resultat');
+const verifierElement = document.querySelector('#verifier');
+
+nombreATrouverElement.value = 5;
+
+verifierElement.addEventListener('click', function() {
+	check();
+});
+
+function check()
+{
+	const nombreATrouver = Number(nombreATrouverElement.value);
+	const votreNombre = Number(votreNombreElement.value);
+
+	if (votreNombre > nombreATrouver) {
+		resultatElement.value =
+		"Votre nombre est supérieur";
+	} else if (votreNombre < nombreATrouver) {
+		resultatElement.value =
+		"Votre nombre est inférieur";
+	} else {
+		resultatElement.value = "Gagné !";
+	}
+}
+
+</script>
